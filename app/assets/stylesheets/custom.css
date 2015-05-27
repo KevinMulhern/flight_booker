@@ -1,0 +1,79 @@
+* {
+	box-sizing: border-box;
+}
+
+body{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+}
+
+
+/* header */
+.logo{
+	font-size: 40px;
+	padding: 25px 15px;
+	font-weight: 400;
+}
+
+.navbar-default{
+	height: 75px;
+
+}
+
+
+
+
+
+/* footer */
+
+html{
+	position: relative;
+	min-height: 100%
+}
+
+body{
+	margin-bottom: 70px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 70px;
+  background-color: #4e5d6c;
+}
+
+.copy{
+	margin-top: 40px;
+}
+
+.contact ul li{
+	display: inline-block;
+	font-size: 25px;
+	padding-right: 10px;
+	color: #fff;
+
+}
+
+.contact ul{
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+.contact h4{
+	margin-bottom: 0;
+}
+
+.contact, .contact ul li a{
+	color: #ebebeb;
+}
+
+.contact ul li a:hover{
+	color:#2b3e50;
+}
+
+
+
+
+
