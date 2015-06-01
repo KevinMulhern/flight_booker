@@ -2,16 +2,16 @@
 	<div class="row">
 		<%= form_tag(flights_path, method: "get") do %>
 			<%= label_tag(:departure_airport_id, "Departure Airport:") %>
-			<%= select_tag(:departure_airport_id, options_for_select(@airports), class: "form-control") %>
+			<%= select_tag(:departure_airport_id, options_for_select(@airports, params[:depatrure_airport_id]), class: "form-control") %>
 
 			<%= label_tag(:destination_airport_id, "Destination:") %>
-			<%= select_tag(:destination_airport_id, options_for_select(@airports), class: "form-control") %>
+			<%= select_tag(:destination_airport_id, options_for_select(@airports, params[:destination_airport_id]), class: "form-control") %>
 
 			<%= label_tag(:departure_date, "Date:") %>
-			<%= select_tag(:departure_date, options_for_select(@dates), class: "form-control") %>
+			<%= select_tag(:departure_date, options_for_select(@dates, params[:departure_date]), class: "form-control") %>
 
 			<%= label_tag(:passengers, "Number of Passengers:") %>
-			<%= select_tag(:passengers, options_for_select(@passenger_options), class: "form-control") %>
+			<%= select_tag(:passengers, options_for_select(@passenger_options, params[:passengers]), class: "form-control") %>
 
 			<%= submit_tag("Search") %>
 
