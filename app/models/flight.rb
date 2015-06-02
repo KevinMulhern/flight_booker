@@ -4,6 +4,10 @@ class Flight < ActiveRecord::Base
 	has_many :bookings
 	has_many :passengers, through: :passenger_bookings
 
+	validates :departure_airport_id, presence: true
+	validates :destination_airport_id, presence: true
+	validates :duration, presence: true
+	validates :departure_date, presence: true
 
 	def self.date_list
 		dates = Flight.all.order(departure_date: :asc)

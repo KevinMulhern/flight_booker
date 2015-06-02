@@ -2,6 +2,22 @@
 <p><%= @num_of_passengers %></p>
 
 <%= form_for @booking do |flight|  %>
+  <% if @booking.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@booking.errors.count, "error") %> 
+      </h2>
+ 
+      <ul>
+      <% @booking.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+
+
 	
 	<%= flight.fields_for :passengers do |passenger| %>
 		<%= passenger.label :name, "Passenger Name"%>
@@ -11,14 +27,12 @@
 		<%= passenger.text_field :email, class: "form-control" %>
 		<br />
 	<% end %>
-	<% flight.hidden_field :flight_id, value: params[:fight_id] %>
 
-	<%= flight.submit "Book Flight" %>
-
-
-
+ 
+  <%= flight.hidden_field :flight_id, value: params[:flight_id] %>
+  
 	
 
-
+	<%= flight.submit "Book Flight" %>
 
 <% end %>

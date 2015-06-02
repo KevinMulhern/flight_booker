@@ -12,7 +12,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'font-awesome-rails'
 gem 'faker', '~> 1.4.3'
-
+gem 'bootstrap-sass', '~> 3.3.4'
+gem 'flat-ui-sass', github: 'wingrunr21/flat-ui-sass'
 
 group :development, :test do
   gem 'byebug'
