@@ -52,6 +52,12 @@ h3{
 	margin-top: 0
 }
 
+/* passenger details page */
+
+.passenger_details{
+	margin-bottom: 50px;
+}
+
 
 
 
@@ -106,6 +112,10 @@ footer {
 
 .contact ul li a:hover{
 	color:#2980B9;
+}
+
+#error_explanation{
+	color: red;
 }
 
 

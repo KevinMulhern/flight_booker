@@ -1,3 +1,6 @@
+
+
+
 <div class="row search">
 
 	<div class="col-sm-6 col-sm-offset-3 well">
@@ -7,22 +10,22 @@
 
 				<div class="form-group col-md-6">
 					<%= label_tag(:departure_airport_id, "Departure Airport:") %>
-					<%= select_tag(:departure_airport_id, options_for_select(@airports, params[:depatrure_airport_id]), class: "form-control") %>
+					<%= select_tag(:departure_airport_id, options_for_select(@airports, @departure_airport), class: "form-control") %>
 				</div>
 
 				<div class="form-group col-md-6">
 					<%= label_tag(:destination_airport_id, "Destination Airport:") %>
-					<%= select_tag(:destination_airport_id, options_for_select(@airports, params[:destination_airport_id]), class: "form-control") %>
+					<%= select_tag(:destination_airport_id, options_for_select(@airports, @destination_airport), class: "form-control", id: "destination-select") %>
 				</div>
 
 				<div class="form-group col-md-6">
 					<%= label_tag(:departure_date, "Date:") %>
-					<%= select_tag(:departure_date, options_for_select(@dates, params[:departure_date]), class: "form-control") %>
+					<%= select_tag(:departure_date, options_for_select(@dates, @depart_date), class: "form-control") %>
 				</div>
 
 				<div class="form-group col-md-6">
 					<%= label_tag(:passengers, "Number of Passengers:") %>
-					<%= select_tag(:passengers, options_for_select(@passenger_options, params[:passengers]), class: "form-control") %>
+					<%= select_tag(:passengers, options_for_select(@passenger_options, @passengers), class: "form-control") %>
 				</div>
 
 				<%= submit_tag "Search", class: "btn btn-primary col-md-4 col-md-offset-8" %>
@@ -46,7 +49,7 @@
 						<th>Departing From:</th>
 						<th>Destination</th>
 						<th>Date:</th>
-						<th>Take of Date:</th>
+						<th>Time:</th>
 					</tr>
 				</thead>
 
@@ -54,7 +57,7 @@
 					<tbody>
 						<% @flights.each do |flight| %>
 							<tr>
-								<td><%= radio_button_tag(:flight_id, flight.id) %></td>
+								<td><%= radio_button_tag(:flight_id, flight.id,class: "flight_select")  %></td>
 								<td><%= flight.id %></td>
 								<td><%= flight.departure_airport.location %></td>
 								<td><%= flight.destination_airport.location %></td>
@@ -71,4 +74,8 @@
 		</div>
 	</div>
 <% end %>
-	
+
+
+
+
+
