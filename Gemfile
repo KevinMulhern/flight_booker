@@ -15,6 +15,10 @@ gem 'faker', '~> 1.4.3'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'flat-ui-sass', github: 'wingrunr21/flat-ui-sass'
 
+group :development do 
+	gem "letter_opener"
+
+end
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
